@@ -251,7 +251,7 @@ def test_single(gnn, gen, n_classes, it):
 
     # --- 7. 计算损失和准确率 ---
     loss = compute_loss_multiclass(pred, labels, n_classes)  # labels: (1, 1000)
-    acc = compute_accuracy_multiclass(pred, labels, n_classes)
+    acc, best_matched_preds = compute_accuracy_multiclass(pred, labels, n_classes)
 
     # --- 8. 打印日志 ---
     print(f"iter {it}: loss={loss.item():.4f}, acc={acc:.2f}%, time={time.time() - start:.2f}s")
